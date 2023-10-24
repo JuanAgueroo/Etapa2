@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de la universidad</title>
+
+  <link rel="stylesheet" href="css/estilos.css">
+
+
+</head>
+
+<body id="fondo">
+
+  <div class="container">
+    <div class="header"></div>
+    <div class="title">
+      <h1>Gestión de la universidad</h1>
+
+    </div>
+    <div class="medio">
+      <h3>Ingresar alumno</h3>
+    </div>
+    <div class="formulario">
+      <div>
+        <form>
+          <label for="fnamestudent">Nombre y Apellido</label>
+          <input type="text" id="nombr" name="nombr" placeholder="Estudiante">
+
+          <label for="age">Edad</label>
+          <input type="number" id="e_eda" name="e_eda" placeholder="Edad">
+
+          <label for="subject">Materia</label>
+          <select id="materias" name="materias">
+            <optgroup label="Licenciatura en Informatica">
+              <option value="Algebra">Algebra</option>
+              <option value="Programación Orientada a Objetos">Programación Orientada a Objetos</option>
+            </optgroup>
+            <optgroup label="Licenciatura en Economia">
+              <option value="Administración I">Administración I</option>
+              <option value="Contabilidad">Contabilidad</option>
+              <option value="Principios de economía">Principios de economía</option>
+            </optgroup>
+            <optgroup label="Abogacía">
+              <option value="Introducción al Derecho">Introducción al Derecho</option>
+              <option value="Teoría de la Persona">Teoría de la Persona</option>
+              <option value="Derecho Penal I">Derecho Penal I</option>
+            </optgroup>
+          </select>
+
+          <input type="submit"  class="boton" value="guardar" name="guardar">
+          <button type="reset" class="boton" value="Borrar" name="borrar">Borrar</button>
+        </form>
+      </div>
+    </div>
+    <div class="foo" id="foo">
+      <div id="foo">
+        <h1>Control de Registro</h1>
+    </div>
+    </div>
+    
+    </div>
+    <script>
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", "cgi-bin/handler", true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            document.getElementById("foo").innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send();
+</script>
+  </div>
+
+
+</body>
+
+</html>
