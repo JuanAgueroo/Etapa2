@@ -24,7 +24,8 @@
     </div>
     <div class="formulario">
       <div>
-        <form>
+        <form action="cgi-bin/handler.py" method="POST">
+          >
           <label for="fnamestudent">Nombre y Apellido</label>
           <input type="text" id="nombr" name="nombr" placeholder="Estudiante">
 
@@ -63,7 +64,7 @@
     </div>
     <script>
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "cgi-bin/handler", true);
+    xhr.open("GET", "cgi-bin/handler.py", true);
     xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && xhr.status == 200) {
             document.getElementById("foo").innerHTML = xhr.responseText;

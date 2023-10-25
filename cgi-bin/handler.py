@@ -23,7 +23,7 @@ def crear_tabla():
     conn = conectar()
     cursor = conn.cursor()
     cursor.execute("""CREATE TABLE IF NOT EXISTS estudiante (
-                        id INTERGER PRIMARY KEY AUTOINCREMENT,
+                        id INTEGER PRIMARY KEY AUTOINCREMENT,
                         nombre_apellido TEXT NOT NULL,
                         edad INTEGER NOT NULL,
                         materia TEXT NOT NULL)""")
@@ -34,7 +34,7 @@ def crear_tabla():
 def insertar_dats(nombre_apellido, edad, materia):
     conn = conectar()
     cursor = conn.cursor()
-    cursor.execute("""INSERT INTO alumno (nombre_apellido, edad, materia) VALUES (?, ?, ?)""",
+    cursor.execute("""INSERT INTO estudiante (nombre_apellido, edad, materia) VALUES (?, ?, ?)""",
                    (nombre_apellido, edad, materia))
     conn.commit()
     conn.close()
@@ -45,14 +45,14 @@ def obtener_datos():
     cursor = conn.cursor()
     cursor.execute("SELECT * FROM alumno")
     alumnos = cursor.fetchall()
-    return alumnos
     conn.close()
+    return alumnos
 
 
 crear_tabla()
 
 if insertar:
-    insertar_dats('nombre_apellido', edad, materia)
+    insertar_dats("nombre_apellido", edad, materia)
 
 
 print("Content-type: text/html\n")
