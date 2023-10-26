@@ -52,7 +52,8 @@ def obtener_datos():
 crear_tabla()
 
 if insertar:
-    insertar_dats("nombre_apellido", edad, materia)
+    if nombre and edad and materia:
+        insertar_dats(nombre, edad, materia)
 
 
 print("Content-type: text/html\n")

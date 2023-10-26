@@ -116,6 +116,6 @@ input[type=submit]:hover {
   
 }
 
-
-
-
+#control{
+  padding: 23px;
+}
