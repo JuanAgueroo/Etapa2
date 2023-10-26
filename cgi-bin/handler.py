@@ -43,7 +43,7 @@ def insertar_dats(nombre_apellido, edad, materia):
 def obtener_datos():
     conn = conectar()
     cursor = conn.cursor()
-    cursor.execute("SELECT * FROM alumno")
+    cursor.execute("SELECT * FROM estudiante")
     alumnos = cursor.fetchall()
     conn.close()
     return alumnos
