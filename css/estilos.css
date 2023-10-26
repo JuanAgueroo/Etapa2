@@ -116,6 +116,11 @@ input[type=submit]:hover {
   
 }
 
-#control{
+th{
   padding: 23px;
+  font-size: large;
+}
+
+tr{
+  font-size: large;
 }
